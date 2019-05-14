@@ -1,6 +1,6 @@
 <div class="container">
   <h1> All Tasks </h1>
-  <p><%= link_to "Add Task", tasks_new_path %></p>
+  <p><%= link_to "Add Task", new_task_path %></p>
 
   <% @tasks.each do |task| %>
   <div class="card">
@@ -11,7 +11,7 @@
         <input type="checkbox" >
       <% end %>
       <%= link_to task.title.capitalize, task_path(task)%>
-      <%= link_to '<i class="fas fa-trash-alt"></i>'.html_safe, task_path(task), method: :delete %>
+      <%= link_to '<i class="fas fa-trash-alt"></i>'.html_safe, task_path(task), method: :delete, data: {confirm: 'Are you sure?'} %>
       
     </div>
   </div>  
