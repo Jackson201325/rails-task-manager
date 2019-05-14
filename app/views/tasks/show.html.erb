@@ -1,0 +1,17 @@
+<div class="container">
+  <h1><%= @task.title.capitalize %></h1>
+  <div class="card p-3">
+    <p><%= @task.detail %>
+  </div>
+  <% if @task.completed == true %>
+    <input type="checkbox" checked><a>Your task is done</a>
+  <% else %>
+    <input type="checkbox"><a>Your task is not done</a>
+  <% end %>
+  
+  <hr>
+  <%= link_to "Edit task", tasks_edit_path(@task), class:'btn btn-primary'%>
+  <%= link_to "Back to list", tasks_path, class:'btn btn-success'%>
+
+
+</div>
